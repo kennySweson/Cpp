@@ -1,0 +1,34 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+class Student{
+public:
+    int id,score;
+};
+
+bool cmp(const Student &a,const Student &b){
+    return a.id>b.id; //降序排列
+    // return a.id<b.id; //升序排列
+}
+
+int main(){
+    Student stu[5];
+    stu[0].id=23;
+    stu[1].id=45;
+    stu[2].id=27;
+    stu[3].id=12;
+    stu[4].id=37;
+
+    stu[0].score=89;
+    stu[1].score=67;
+    stu[2].score=77;
+    stu[3].score=89;
+    stu[4].score=56;
+
+    sort(stu,stu+5,cmp);
+
+    cout<<stu[0].id<<" "<<stu[0].score<<endl; //不影响其他数据，只按规定排列参数改变
+    
+    return 0;
+}
