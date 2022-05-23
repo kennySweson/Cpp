@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+class basePage{
+public:
+    void upper(){
+        cout<<"首页，公开课，讨论区"<<endl;
+    }
+    void lower(){
+        cout<<"网站地图，联系我们"<<endl;
+    }
+};
+
+class CPP:public basePage{
+public:
+    void context(){
+        cout<<"CPP课程下载链接"<<endl;
+    }
+};
+
+class Jave:public basePage{
+public:
+    void context(){
+        cout<<"Jave课程下载链接"<<endl;
+    }
+};
+
+void test0(){
+    CPP c;
+    c.upper();
+    c.context();
+    c.lower();
+}
+
+void test1(){
+    Jave ja;
+    ja.upper();
+    ja.context();
+    ja.lower();
+}
+
+int main(){
+    test0();
+    cout<<endl;
+    test1();
+    system("pause");
+    return 0;
+}
